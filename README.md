@@ -25,7 +25,7 @@ Retorna um objeto com as seguintes propriedades:
 ### Exemplo
 
 ```javascript
-import { validateCPF } from './caminho/para/o/arquivo';
+import { validateCPF } from '@bfukumori/cpf-validator';
 
 const resultado = validateCPF('12345678901');
 console.log(resultado);

@@ -11,6 +11,13 @@
     "test:watch": "node --test --watch",
     "test:cov": "node --test --experimental-test-coverage"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bfukumori/cpf-validator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bfukumori/cpf-validator/issues"
+  },
   "keywords": [
     "util",
     "cpf",
