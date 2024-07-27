@@ -1,5 +1,11 @@
 import { validationMessages } from './constants/validationMessages.js';
-import { allDigitsAreEqual, calculateCheckDigit } from './utils/index.js';
+import {
+  allDigitsAreEqual,
+  hasCorrectLength,
+  isFirstCheckDigitValid,
+  isInputValid,
+  isSecondCheckDigitValid,
+} from './utils/index.js';
 
 /**
  * Validates if a CPF is valid.
@@ -9,7 +15,7 @@ import { allDigitsAreEqual, calculateCheckDigit } from './utils/index.js';
  */
 export function validateCPF(cpf) {
   // Checks if the CPF has 11 digits
-  if (cpf.length !== 11) {
+  if (!hasCorrectLength(cpf)) {
     return {
       valid: false,
       message: validationMessages.INVALID_LENGTH,
@@ -17,8 +23,7 @@ export function validateCPF(cpf) {
   }
 
   // Checks if the CPF contains only numbers
-  const cpfRegex = /^\d{11}$/;
-  if (!cpfRegex.test(cpf)) {
+  if (!isInputValid(cpf)) {
     return {
       valid: false,
       message: validationMessages.INVALID_INPUT,
@@ -34,8 +39,7 @@ export function validateCPF(cpf) {
   }
 
   // Calculates and checks the first check digit
-  const firstCheckDigit = calculateCheckDigit(cpf.slice(0, 9), 10);
-  if (firstCheckDigit !== parseInt(cpf.charAt(9))) {
+  if (!isFirstCheckDigitValid(cpf)) {
     return {
       valid: false,
       message: validationMessages.INVALID_FIRST_CHECK_DIGIT,
@@ -43,8 +47,7 @@ export function validateCPF(cpf) {
   }
 
   // Calculates and checks the second check digit
-  const secondCheckDigit = calculateCheckDigit(cpf.slice(0, 10), 11);
-  if (secondCheckDigit !== parseInt(cpf.charAt(10))) {
+  if (!isSecondCheckDigitValid(cpf)) {
     return {
       valid: false,
       message: validationMessages.INVALID_SECOND_CHECK_DIGIT,

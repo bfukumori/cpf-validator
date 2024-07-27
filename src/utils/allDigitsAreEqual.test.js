@@ -9,6 +9,7 @@ describe('#allDigitsAreEqual', () => {
     const cpf = CpfTestBuilder.aCPF().withAllDigitsEqual().build();
     const expected = true;
     const result = allDigitsAreEqual(cpf);
+
     deepStrictEqual(result, expected);
   });
 
