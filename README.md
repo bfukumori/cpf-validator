@@ -32,6 +32,28 @@ console.log(resultado);
 // Exemplo de saída: { valid: false, message: 'The second check digit is invalid.' }
 ```
 
+## Função `formatCPF`
+
+A função `formatCPF` é responsável por formatar um CPF no padrão ###.###.###-###:
+
+### Parâmetros
+
+- **cpf** (`string`): O CPF a ser formatado.
+
+### Retorno
+
+Retorna uma string caso sucesso ou lança uma exceção, caso o cpf seja inválido.
+
+### Exemplo
+
+```javascript
+import { formatCPF } from '@bfukumori/cpf-validator';
+
+const resultado = formatCPF('12345678901');
+console.log(resultado);
+// Exemplo de saída: "123.456.789-01"
+```
+
 ## Contribuindo
 
 Sinta-se à vontade para contribuir com melhorias ou correções. Para isso, por favor, abra uma _issue_ ou envie um _pull request_.
