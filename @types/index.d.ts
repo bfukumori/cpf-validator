@@ -5,4 +5,5 @@ declare module '@bfukumori/cpf-validator' {
   }
 
   export function validateCPF(cpf: string): ValidationResult;
+  export function formatCPF(cpf: string): string;
 }

@@ -54,6 +54,11 @@ export class CpfTestBuilder {
     return this;
   }
 
+  withFormattedCPF() {
+    this.#cpf = '175.951.582-57';
+    return this;
+  }
+
   build() {
     return this.#cpf;
   }
