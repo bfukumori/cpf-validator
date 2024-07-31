@@ -34,7 +34,7 @@ console.log(resultado);
 
 ## Função `formatCPF`
 
-A função `formatCPF` é responsável por formatar um CPF no padrão ###.###.###-###:
+A função `formatCPF` é responsável por formatar um CPF no padrão ###.###.###-##:
 
 ### Parâmetros
 
